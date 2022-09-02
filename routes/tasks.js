@@ -36,18 +36,4 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
-    try {
-        await Task.destroy({
-            where: {
-                id: req.params.id
-            }
-        });
-        res.send('OK');
-    } catch (error) {
-        res.send(error);
-    }
-})
-
-
 module.exports = router;
